@@ -1,0 +1,11 @@
+<div>
+  <a
+    class="button {{ .Params.class }} {{ if .Params.backgroundcolor }} button-customstyled {{ end }}"
+    href="{{ .Params.destination }}"
+    style="{{ if .Params.textcolor }}color: {{ .Params.textcolor }};{{ end }} {{ if .Params.backgroundcolor }}background-color: {{ .Params.backgroundcolor }}{{ end }}"
+  >
+    {{ if .Params.icon }}
+    <img class="icon" src="{{ .Params.icon }}" />
+    {{ end }} {{ .Title }}
+  </a>
+</div>

@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+{{/*  {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
 
 {{ partial "short-text" .Params.blurb}}
 
@@ -8,6 +8,30 @@
 
 {{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
 
-{{ partial "blog" . }}
+{{ partial "blog" . }}  */}}
+
+<div class="row" style="margin-top: 5rem">
+  <div class="five columns" style="margin-top: 7%">
+    <!-- Your Image Here -->
+    <img src="img/avatar.png" srcset="img/avatar@2x.png 2x">
+
+    <!-- Your Name -->
+    <h1>{{ .Title }}</h1>
+
+    <!-- Short Bio -->
+    {{/*  <p>LittleLink is an open source DIY alternative to services like <a href="https://linktr.ee">Linktree</a> and <a href="https://many.link">many.link</a>. LittleLink was built using <a href="http://www.getskeleton.com">Skeleton</a>, a dead simple, responsive boilerplate—we’ve just created some branded buttons and stripped out the things you won't need. 😊</p>  */}}
+
+    {{ partial "link-list" . }}
+    <hr />
+  </div>
+  <div class="seven columns">
+    <div class="grid">
+      {{ range (.Paginate ( first 6 ( where .Site.RegularPages "Type" "post" ))).Pages }}
+        {{ .Render "li" }}
+      {{ end }}
+    </div>
+    {{ partial "pagination" . }}
+  </div>
+</div>
 
 {{ end }}
