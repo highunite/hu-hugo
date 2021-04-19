@@ -23,7 +23,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Link to", name: "destination", widget: "string", pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)', 'Must be a URL starting with http']}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Icon Link", name: "icon", widget: "string"}
-      - {label: "Button Background Color", name: "backgroundcolor", widget: "color"}
-      - {label: "Button Text Color", name: "textcolor", widget: "color"}
+      - {label: "Icon Link", name: "icon", widget: "string", required: false}
+      - {label: "Button Background Color", name: "backgroundcolor", widget: "color", required: false}
+      - {label: "Button Text Color", name: "textcolor", widget: "color", required: false}
       - {label: "Button Style", name: "class", widget: "string"}
